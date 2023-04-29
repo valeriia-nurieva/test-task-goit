@@ -15,4 +15,11 @@ export const Button = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  transition: box-shadow 250ms ease-in-out transform 250ms ease-in-out;
+    :hover {
+    transform: translateY(-4px);
+    box-shadow: rgb(255 0 134 / 50%) 0px 8px 43px;
+}
 `;
+
+

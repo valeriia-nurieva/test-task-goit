@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const Article = styled.article`
   position: relative;
-  width: 380px;
-  height: 460px;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 36px;
   background: linear-gradient(

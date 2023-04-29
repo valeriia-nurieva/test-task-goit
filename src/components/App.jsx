@@ -1,12 +1,22 @@
-import Container from "./Container";
-import Card from "./Card";
+import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+import SharedLayout from 'components/SharedLayout';
 import GlobalStyle from "./GlobalStyle";
+
+const Home = lazy(() => import('pages/Home'));
+const Tweets = lazy(() => import('pages/Tweets'));
 
 export const App = () => {
   return (
-    <Container>
-      <Card />
-      <GlobalStyle/>
-    </Container>
+        <>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/tweets" element={<Tweets />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+      <GlobalStyle />
+    </>
   );
 };

@@ -1,10 +1,13 @@
 import { Wrapper, Text } from './Info.styled';
 
-const Info = () => {
+const Info = ({ user, followers, tweets }) => {
+  const formattedNumber = followers.toLocaleString('en-US', {useGrouping: true}); // "100,500"
+  
   return (
     <Wrapper>
-      <Text>777 tweets</Text>
-      <Text>100,500 Followers</Text>
+      <Text as="h2">{user}</Text>
+      <Text>{tweets} tweets</Text>
+      <Text>{formattedNumber} Followers</Text>
     </Wrapper>
   );
 };
