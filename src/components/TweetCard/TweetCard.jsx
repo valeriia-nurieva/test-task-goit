@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Article from './TweetCard.styled';
-import Logo from 'components/Logo';
-import Background from 'components/Background';
-import Avatar from 'components/Avatar';
-import Info from 'components/Info';
-import FollowingButton from 'components/FollowingButton';
+import Logo from 'components/TweetCard/Logo';
+import Background from 'components/TweetCard/Background';
+import Avatar from 'components/TweetCard/Avatar';
+import Info from 'components/TweetCard/Info';
+import FollowingButton from 'components/TweetCard/FollowingButton';
 
 const TweetCard = ({user, avatar, followers, tweets}) => {
   const [following, setFollower] = useState(false);
