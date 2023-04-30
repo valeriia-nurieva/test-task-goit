@@ -4,7 +4,10 @@ export const WelcomePageBox = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 68px);
+  height: calc(100vh - 136px);
+  @media (min-width: 768px) {
+    height: calc(100vh - 68px);
+  }
 `;
 export const Hero = styled.h1`
   font-family: 'Montserrat', sans-serif;
