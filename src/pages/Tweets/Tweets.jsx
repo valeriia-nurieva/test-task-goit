@@ -64,10 +64,10 @@ const Tweets = () => {
       <Section>
         <Container>
           <Wrapper>
-          <BackLinkHref to={backLinkHref}>
-            <BsArrowLeft />
-            Go back
-          </BackLinkHref>
+            <BackLinkHref to={backLinkHref}>
+              <BsArrowLeft />
+              Go back
+            </BackLinkHref>
             <Filter filter={filter} handleFilterChange={handleFilterChange} />
           </Wrapper>
           {users.length > 0 && (
@@ -85,7 +85,12 @@ const Tweets = () => {
           <ScrollToTop
             smooth
             color="#373737"
-            style={{ backgroundColor: '#ebd8ff' }}
+            style={{
+              backgroundColor: '#ebd8ff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           />
           {isLoading && <Loader />}
         </Container>
