@@ -32,6 +32,7 @@ export const Select = styled.select`
   border: none;
   appearance: none;
   padding-right: 20px;
+  background-color: transparent;
   transition: color 250ms ease-in-out;
   :hover {
     color: #5736a3;
