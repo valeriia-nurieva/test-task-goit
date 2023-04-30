@@ -12,7 +12,6 @@ const TweetCard = ({ id, user, avatar, followers, tweets }) => {
     localStorage.getItem(`following-${id}`) === 'true' || false
   );
   const [currentFollowers, setCurrentFollowers] = useState(followers);
-
   const credentials = {
     followers: following ? currentFollowers - 1 : currentFollowers + 1,
   };

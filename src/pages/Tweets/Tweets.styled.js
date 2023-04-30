@@ -9,10 +9,8 @@ export const Section = styled.section`
 export const BackLinkHref = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 8px;
-  width: 120px;
+  gap: 20px;
   padding: 8px;
-  margin-bottom: 8px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -25,6 +23,13 @@ export const BackLinkHref = styled(Link)`
     color: #5736a3;
   }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+`
 
 export const Info = styled.p`
   text-align: center;
