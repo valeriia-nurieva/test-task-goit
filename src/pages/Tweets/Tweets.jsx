@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import ScrollToTop from 'react-scroll-to-top';
-import Filter from 'components/Filter';
 import TweetList from 'components/TweetList';
 import Container from 'components/Container';
+import Filter from 'components/Filter';
+import ScrollToTopBtn from 'components/ScrollToTopBtn';
 import LoadMore from 'components/LoadMore';
 import Loader from 'Loader';
 import { BsArrowLeft } from 'react-icons/bs';
 import { getUsers } from 'api';
+import { getfilteredUsers } from 'helpers';
 import { PAGE_LIMIT } from 'constants';
 import { Section, BackLinkHref, Wrapper, Info } from './Tweets.styled';
 
@@ -21,7 +22,8 @@ const Tweets = () => {
 
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
-
+  const filteredUsers = getfilteredUsers(users, filter);
+  
   useEffect(() => {
     async function getUsersTweets() {
       try {
@@ -47,18 +49,6 @@ const Tweets = () => {
     setFilter(e.target.value);
   };
 
-  const filteredUsers = users.filter(user => {
-    const isFollowing = localStorage.getItem(`following-${user.id}`) === 'true';
-    switch (filter) {
-      case 'follow':
-        return !isFollowing;
-      case 'following':
-        return isFollowing;
-      default:
-        return true;
-    }
-  });
-
   return (
     <main>
       <Section>
@@ -82,16 +72,7 @@ const Tweets = () => {
               )}
             </>
           )}
-          <ScrollToTop
-            smooth
-            color="#373737"
-            style={{
-              backgroundColor: '#ebd8ff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          />
+          <ScrollToTopBtn />
           {isLoading && <Loader />}
         </Container>
       </Section>
