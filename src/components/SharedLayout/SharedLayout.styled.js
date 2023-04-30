@@ -4,7 +4,17 @@ import styled from 'styled-components';
 export const Header = styled.header`
   display: flex;
   padding: 8px 0;
-  border-bottom: 1px solid #373737;;
+  border-bottom: 1px solid #373737;
+`;
+
+export const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  @media (min-width: 768px) {
+    justify-content: start;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -24,8 +34,5 @@ export const StyledLink = styled(NavLink)`
   }
   &.active {
     background-color: #5cd3a8;
-  }
-  :not(:last-child) {
-    margin-right: 12px;
   }
 `;
