@@ -1,6 +1,6 @@
 import { Thumb, Img, Line } from './Avatar.styled';
 
-const Avatar = ({avatar}) => {
+const Avatar = ({ avatar }) => {
   return (
     <>
       <Line />

@@ -9,7 +9,7 @@ const TweetList = ({ users }) => {
         users.map(({ id, user, avatar, followers, tweets }) => {
           return (
             <TweetItem key={id}>
-              <TweetCard user={user} avatar={avatar} tweets={tweets} followers={followers} />
+              <TweetCard id={id} user={user} avatar={avatar} tweets={tweets} followers={followers} />
             </TweetItem>
           );
         })}

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const TweetBox = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 30px;
+  margin-bottom: 20px;
   @media (min-width: 1200px) {
     gap: 20px;
   }

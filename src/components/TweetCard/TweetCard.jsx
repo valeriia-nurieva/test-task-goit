@@ -5,28 +5,27 @@ import Background from 'components/TweetCard/Background';
 import Avatar from 'components/TweetCard/Avatar';
 import Info from 'components/TweetCard/Info';
 import FollowingButton from 'components/TweetCard/FollowingButton';
+import { updateUser } from 'api';
 
-const TweetCard = ({user, avatar, followers, tweets}) => {
-  const [following, setFollower] = useState(false);
-  const [count, setCount] = useState(100500);
+const TweetCard = ({ id, user, avatar, followers, tweets }) => {
+  const [following, setFollowing] = useState(
+    localStorage.getItem(`following-${id}`) === 'true' || false
+  );
+  const [currentFollowers, setCurrentFollowers] = useState(followers);
 
-// useEffect(() => {
-//   const savedFollower = JSON.parse(localStorage.getItem('following'));
-//   const savedCount = localStorage.getItem('count');
-//   if (savedFollower !== null && savedCount !== null) {
-//     setFollower(savedFollower);
-//     setCount(parseInt(savedCount));
-//   }
-// }, []);
+  const credentials = {
+    followers: following ? currentFollowers - 1 : currentFollowers + 1,
+  };
 
-// useEffect(() => {
-// localStorage.setItem('following', JSON.stringify(following));
-//     localStorage.setItem('count', count);
-// }, [following, count]);
-
-  const handleClick = () => {
-    setFollower(!following);
-    setCount(following ? 100500 : count + 1);
+  const handleClick = async () => {
+    setFollowing(!following);
+    try {
+      const response = await updateUser(id, credentials);
+      setCurrentFollowers(response.followers);
+      localStorage.setItem(`following-${id}`, !following);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -34,7 +33,7 @@ const TweetCard = ({user, avatar, followers, tweets}) => {
       <Logo />
       <Background />
       <Avatar avatar={avatar} />
-      <Info tweets={tweets} followers={followers} user={user} />
+      <Info tweets={tweets} followers={currentFollowers} user={user} />
       <FollowingButton handleClick={handleClick} following={following} />
     </Article>
   );
