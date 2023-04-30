@@ -4,7 +4,7 @@ export const WelcomePageBox = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 136px);
+  height: calc(100vh - 146px);
   @media (min-width: 768px) {
     height: calc(100vh - 68px);
   }
