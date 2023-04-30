@@ -2,7 +2,7 @@
 
 ## In this simple app, you'll see tweet cards with interactive buttons
 
-![Screenshot of a app](https://api.monosnap.com/file/download?id=Bn8tUsHcDLDqL1tQ2S9eEqB2ZQHixk)
+![Screenshot of a app](./assets/screenshot.jpg)
 
 - [Link to site](https://valeriia-nurieva.github.io/test-task-goit/tweets)
 - [Link to repository](https://github.com/valeriia-nurieva/test-task-goit)
@@ -51,4 +51,6 @@ The app created using
    reload after saving changes in the project files.
 
 **I'll leave my contacts here and I'd be happy to see your feedback 🙌**
-valerka.0906@gmail.com https://t.me/vaaaleeerkaaa
+
+- valerka.0906@gmail.com
+- https://t.me/vaaaleeerkaaa
