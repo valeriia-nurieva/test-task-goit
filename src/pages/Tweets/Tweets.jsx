@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import Filter from 'components/Filter';
 import ScrollToTopBtn from 'components/ScrollToTopBtn';
 import LoadMore from 'components/LoadMore';
-import Loader from 'Loader';
+import Loader from 'components/Loader';
 import { BsArrowLeft } from 'react-icons/bs';
 import { getUsers } from 'api';
 import { getfilteredUsers } from 'helpers';
