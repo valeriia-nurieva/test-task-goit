@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TweetBox = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  min-height: calc(100vh - 248px);
+  min-height: calc(100vh - 268px);
   justify-content: flex-start;
   gap: 30px;
   margin-bottom: 20px;
