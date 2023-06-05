@@ -1,4 +1,4 @@
-# Test task - Tweets cards
+# Tweets cards
 
 ## In this simple app, you'll see tweet cards with interactive buttons
 
